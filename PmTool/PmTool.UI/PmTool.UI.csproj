@@ -230,6 +230,7 @@
     <Content Include="Views\Factory\CreateFactoryProject.cshtml" />
     <Content Include="Views\Office\CreateOfficeProject.cshtml" />
     <Content Include="Views\OtherProject\CreateOtherProject.cshtml" />
+    <Content Include="Views\User\CreateAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

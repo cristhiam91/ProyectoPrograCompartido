@@ -67,5 +67,11 @@ namespace PmTool.UI.Controllers
             ViewBag.projectTypeDll = new SelectList(projectType, "Project_type_id", "Project_type_id");
             return View();
         }
+
+        public ActionResult aaa()
+        {
+
+            return View();
+        }
     }
 }

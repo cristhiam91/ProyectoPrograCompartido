@@ -5,12 +5,46 @@
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/login.css">
-<script type="text/javascript" src="~/Scripts/login.js"></script>
-<script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
-<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
-<script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
-<script type="text/javascript" src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
+<link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+
+
+
+<div class="img-responsive">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" data-interval="2000" id="aaa">
+            <div class="item active" id="test">
+                <img src="~/Images/dc2.jpg" alt="Los Angeles" id="imgCarosel" class="img-responsive">
+            </div>
+
+            <div class="item" id="test">
+                <img src="~/Images/test3.jpg" alt="Chicago" id="imgCarosel" class="img-responsive">
+            </div>
+
+            <div class="item" id="test">
+                <img src="~/Images/test4.jpg" alt="New York" id="imgCarosel" class="img-responsive">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
 
 <div class="jumbotron">
     <h1>What do you want to do today?</h1>
@@ -21,6 +55,10 @@
         }*@
     @*@Html.DropDownListFor(model => model.Project_type_id, ViewBag.projectTypedll as SelectList, "--select--", new { @class = "for-control" })
         @Html.DropDownList("projectTypedll", "Select project")*@
+
+
+
+
 
     <div class="jumbotron">
         <form>

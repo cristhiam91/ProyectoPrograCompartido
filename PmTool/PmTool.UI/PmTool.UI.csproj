@@ -54,7 +54,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\..\..\..\Dlls\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\..\Otros\Clase 3\Dlls\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -183,6 +183,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -219,7 +220,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\User\UsersId.cshtml" />
     <Content Include="Views\Project\FirstPage.cshtml" />
     <Content Include="Views\Project\Home.cshtml" />
     <Content Include="Views\Lab\NoLoginCreateProject.cshtml" />
@@ -230,10 +230,17 @@
     <Content Include="Views\Factory\CreateFactoryProject.cshtml" />
     <Content Include="Views\Office\CreateOfficeProject.cshtml" />
     <Content Include="Views\OtherProject\CreateOtherProject.cshtml" />
+    <Content Include="Views\User\UserProfileManagement.cshtml" />
+    <Content Include="Views\User\DeleteUserAccount.cshtml" />
+    <Content Include="Views\User\UserDetails.cshtml" />
+    <Content Include="Views\User\CreateUserAccount.cshtml" />
     <Content Include="Views\User\CreateAccount.cshtml" />
+    <Content Include="Views\User\EditUserAccount.cshtml" />
+    <Content Include="Views\Home\aaa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

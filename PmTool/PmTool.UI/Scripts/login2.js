@@ -8,13 +8,15 @@
         $tab_signup = $form_modal_tab.children('li').eq(1).children('a'),
         $forgot_password_link = $form_login.find('.cd-form-bottom-message a'),
         $back_to_login_link = $form_forgot_password.find('.cd-form-bottom-message a'),
-        $main_nav = $('.main-nav');
-        $container = $('.container');
+        $main_nav = $('.main-nav'),
+        $aasd = $('#aasd');
+    
+
 
     //open modal
-    $container.on('click', function (event) {
+    $aasd.on('click', function (event) {
 
-        if ($(event.target).is($container)) {
+        if ($(event.target).is($main_nav)) {
             // on mobile open the submenu
             $(this).children('ul').toggleClass('is-visible');
         } else {

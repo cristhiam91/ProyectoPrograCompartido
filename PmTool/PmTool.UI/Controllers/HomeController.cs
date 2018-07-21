@@ -73,5 +73,35 @@ namespace PmTool.UI.Controllers
 
             return View();
         }
+        public ActionResult Mis_Proyectos(int user_id)
+        {
+            MyProjects myProjects = new MyProjects();
+            //Factories
+            var listaFactories = fac.SearchFactoryProjectbypm(user_id);
+            var LFactories = Mapper.Map<List<Models.Factories>>(listaFactories);
+            myProjects.Factories = LFactories;
+
+            //Labs - MEDIO funcional
+            var listaLabs = lab.SearchLabProjectbypm(user_id);
+            var LLabs = Mapper.Map<List<Models.Labs>>(listaLabs);
+            myProjects.Labs = LLabs;
+
+            //DataCenter
+            var listaDataCenter = dc.SearchDataCenterProjectbypm(user_id);
+            var LDataCenter = Mapper.Map<List<Models.DataCenters>>(listaDataCenter);
+            myProjects.DataCenters = LDataCenter;
+
+            //Office
+            var listaOffice = off.SearchOfficeProjectbypm(user_id);
+            var LOffices = Mapper.Map<List<Models.Offices>>(listaOffice);
+            myProjects.Offices = LOffices;
+
+            //OtherProject
+            var listaOtherProject = other.SearchOtherProjectbypm(user_id);
+            var LOPs = Mapper.Map<List<Models.OtherProjects>>(listaOtherProject);
+            myProjects.OtherProjects = LOPs;
+
+            return View(myProjects);
+        }
     }
 }

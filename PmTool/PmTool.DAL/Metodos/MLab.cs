@@ -39,6 +39,11 @@ namespace PmTool.DAL.Metodos
             return _db.Select<Labs>(x => x.Lab_request_id == labProjectId).FirstOrDefault();
         }
 
+        public List<Labs> SearchLabProjectbypm(int user)
+        {
+            return _db.Select<Labs>(x => x.Lab_requestor_id == user);
+        }
+
         public void UpdateLabProject(Labs lab)
         {
             _db.Update(lab);

@@ -18,7 +18,6 @@ namespace PmTool.UI.Controllers
         public UserController()
         {
             user = new MUser();
-
         }
         public ActionResult Index()
         {

@@ -32,6 +32,11 @@ namespace PmTool.DAL.Metodos
             return _db.Select<DataCenters>(x => x.DataCenter_request_id == dataCenterProjectId).FirstOrDefault();
         }
 
+        public List<DataCenters> SearchDataCenterProjectbypm(int user)
+        {
+            return _db.Select<DataCenters>(x => x.DataCenter_requestor_id == user);
+        }
+
         public void UpdateDataCenterProject(DataCenters dataCenter)
         {
             _db.Update(dataCenter);

@@ -15,5 +15,6 @@ namespace PmTool.DAL.Interfaces
         OtherProjects SearchOtherProject(int OtherProjectId);
         void UpdateOtherProject(OtherProjects otherProject);
         void DeleteOtherProject(int OtherProjectId);
+        List<OtherProjects> SearchOtherProjectbypm(int user);
     }
 }

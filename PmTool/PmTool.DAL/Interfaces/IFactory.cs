@@ -15,5 +15,6 @@ namespace PmTool.DAL.Interfaces
         Factories SearchFactoryProject(int factoryProjectId);
         void UpdateFactoryProject(Factories factory);
         void DeleteFactoryProject(int factoryProjectId);
+        List<Factories> SearchFactoryProjectbypm(int user);
     }
 }

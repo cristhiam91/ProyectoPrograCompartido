@@ -21,22 +21,6 @@ namespace PmTool.DAL.Metodos
             _db.Delete<Factories>(x => x.Factory_request_id == factoryProjectId);
         }
 
-        public List<Factories> FactoryhUserProjects(int userId)
-        {
-            try
-            {
-                List<Factories> UserFactoryProjects = _db.Where<Factories>(x => x.Factory_requestor_id == userId).ToList();
-
-                return UserFactoryProjects;
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
         public List<Factories> ListFactories()
         {
             return _db.Select<Factories>();
@@ -45,6 +29,11 @@ namespace PmTool.DAL.Metodos
         public Factories SearchFactoryProject(int factoryProjectId)
         {
             return _db.Select<Factories>(x => x.Factory_request_id == factoryProjectId).FirstOrDefault();
+        }
+
+        public List<Factories> SearchFactoryProjectbypm(int user)
+        {
+            return _db.Select<Factories>(x => x.Factory_requestor_id == user);
         }
 
         public void UpdateFactoryProject(Factories factory)

@@ -26,25 +26,14 @@ namespace PmTool.DAL.Metodos
             return _db.Select<OtherProjects>();
         }
 
-        public List<OtherProjects> OtherProjectUserProjects(int userId)
-        {
-            try
-            {
-                List<OtherProjects> UserOtherProjectProjects = _db.Where<OtherProjects>(x => x.Other_requestor_id == userId).ToList();
-
-                return UserOtherProjectProjects;
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
         public OtherProjects SearchOtherProject(int OtherProjectId)
         {
             return _db.Select<OtherProjects>(x => x.Other_request_id == OtherProjectId).FirstOrDefault();
+        }
+
+        public List<OtherProjects> SearchOtherProjectbypm(int user)
+        {
+            return _db.Select<OtherProjects>(x => x.Other_requestor_id == user);
         }
 
         public void UpdateOtherProject(OtherProjects otherProject)

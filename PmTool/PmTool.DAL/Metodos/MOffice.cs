@@ -26,25 +26,14 @@ namespace PmTool.DAL.Metodos
             return _db.Select<Offices>();
         }
 
-        public List<Offices> OfficeUserProjects(int userId)
-        {
-            try
-            {
-                List<Offices> UserOfficeProjects = _db.Where<Offices>(x => x.Office_requestor_id == userId).ToList();
-
-                return UserOfficeProjects;
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
         public Offices SearchOfficeProject(int officeProjectId)
         {
             return _db.Select<Offices>(x => x.Office_request_id == officeProjectId).FirstOrDefault();
+        }
+
+        public List<Offices> SearchOfficeProjectbypm(int user)
+        {
+            return _db.Select<Offices>(x => x.Office_requestor_id == user);
         }
 
         public void UpdateOfficeProject(Offices office)

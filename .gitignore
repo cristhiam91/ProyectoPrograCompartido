@@ -215,13 +215,3 @@ FakesAssemblies/
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
-
-PmTool/ServiceStack\.Common\.dll
-
-PmTool/ServiceStack\.Interfaces\.dll
-
-PmTool/ServiceStack\.OrmLite\.dll
-
-PmTool/ServiceStack\.OrmLite\.SqlServer\.dll
-
-PmTool/ServiceStack\.Text\.dll

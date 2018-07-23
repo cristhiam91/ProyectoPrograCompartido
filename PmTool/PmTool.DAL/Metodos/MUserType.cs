@@ -14,16 +14,7 @@ namespace PmTool.DAL.Metodos
     {
         public List<UserTypes> ListUserTypes()
         {
-            try
-            {
-                return _db.Select<UserTypes>();
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            return _db.Select<UserTypes>();
         }
     }
 }

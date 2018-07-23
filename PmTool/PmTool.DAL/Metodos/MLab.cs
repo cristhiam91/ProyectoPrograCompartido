@@ -29,22 +29,6 @@ namespace PmTool.DAL.Metodos
             _db.Delete<Labs>(x => x.Lab_request_id == labProjectId);
         }
 
-        public List<Labs> LabUserProjects(int userId)
-        {
-            try
-            {
-                List<Labs> UserLabProjects = _db.Where<Labs>(x => x.Lab_requestor_id == userId).ToList();
-
-                return UserLabProjects;
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
         public List<Labs> ListLabs()
         {
             return _db.Select<Labs>();
@@ -53,6 +37,11 @@ namespace PmTool.DAL.Metodos
         public Labs SearchLabProject(int labProjectId)
         {
             return _db.Select<Labs>(x => x.Lab_request_id == labProjectId).FirstOrDefault();
+        }
+
+        public List<Labs> SearchLabProjectbypm(int user)
+        {
+            return _db.Select<Labs>(x => x.Lab_requestor_id == user);
         }
 
         public void UpdateLabProject(Labs lab)

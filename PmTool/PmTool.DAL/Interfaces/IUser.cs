@@ -12,11 +12,6 @@ namespace PmTool.DAL.Interfaces
     {
         List<Users> ListUsers();
         void AddUser(Users user);
-        void CreatedUserAccountSentEmail(string email, string name);
-        Users SearchUser(int userId);
-
-        void EditUser(Users user);
-        void DeleteUser(int userId);
     }
 
    

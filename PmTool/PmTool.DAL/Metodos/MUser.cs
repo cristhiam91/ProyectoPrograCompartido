@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using PmTool.DATA;
 using ServiceStack.OrmLite;
 using PmTool.DAL.Interfaces;
-using System.Net.Mail;
 
 namespace PmTool.DAL.Metodos
 {

@@ -1,0 +1,167 @@
+﻿@model PmTool.UI.Models.MyPMProjects
+@{
+	ViewBag.Title = "My PM Projects";
+}
+
+<h2>MyPMProjects</h2>
+
+
+<h2>Labs</h2>
+<table class="table">
+	<tr>
+		<th>
+			<p>Id del Labs</p>
+		</th>
+		<th>
+			<p>Nombre del Labs</p>
+		</th>
+		<th>
+			<p>Descripcion del Labs</p>
+		</th>
+		<th></th>
+	</tr>
+	@foreach (var item in Model.Labs)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Lab_request_id)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Project_name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Project_description)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.Lab_request_id }) |
+				@Html.ActionLink("Details", "Details", new { id = item.Lab_request_id }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.Lab_request_id })
+			</td>
+		</tr>
+	}
+</table>
+<h2>Factory</h2>
+<table class="table">
+	<tr>
+		<th>
+			<p>Id del Factory</p>
+		</th>
+		<th>
+			<p>Nombre del Factory</p>
+		</th>
+		<th>
+			<p>Descripcion del Factory</p>
+		</th>
+		<th></th>
+	</tr>
+	@foreach (var item in Model.Factories)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Factory_request_id)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Project_name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Project_description)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.Factory_request_id }) |
+				@Html.ActionLink("Details", "Details", new { id = item.Factory_request_id }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.Factory_request_id })
+			</td>
+		</tr>
+	}
+</table>
+<h2>Data Center</h2>
+<table class="table">
+	<tr>
+		<th>
+			<p>Id del Data Center</p>
+		</th>
+		<th>
+			<p>Nombre del Data Center</p>
+		</th>
+		<th>
+			<p>Descripcion del Data Center</p>
+		</th>
+		<th></th>
+	</tr>
+	@foreach (var item in Model.DataCenters)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.DataCenter_request_id)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Project_name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Project_description)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.DataCenter_request_id }) |
+				@Html.ActionLink("Details", "Details", new { id = item.DataCenter_request_id }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.DataCenter_request_id })
+			</td>
+		</tr>
+	}
+</table>
+<h2>Office</h2>
+<table class="table">
+	<tr>
+		<th>
+			<p>Id del Office</p>
+		</th>
+		<th>
+			<p>Nombre del Office</p>
+		</th>
+		<th>
+			<p>Descripcion del Office</p>
+		</th>
+		<th></th>
+	</tr>
+	@foreach (var item in Model.Offices)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Office_request_id)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Project_name)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Project_description)
+			</td>
+		</tr>
+	}
+</table>
+<h2>Other Project</h2>
+<table class="table">
+	<tr>
+		<th>
+			<p>Id del Other Projec</p>
+		</th>
+		<th>
+			<p>Descripcion del Other Projec</p>
+		</th>
+		<th></th>
+	</tr>
+	@foreach (var item in Model.OtherProjects)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Other_request_id)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Project_description)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.Other_request_id }) |
+				@Html.ActionLink("Details", "Details", new { id = item.Other_request_id }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.Other_request_id })
+			</td>
+		</tr>
+	}
+</table>

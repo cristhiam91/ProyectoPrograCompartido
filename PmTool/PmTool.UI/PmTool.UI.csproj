@@ -161,7 +161,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BossProjectManager.cs" />
+    <Compile Include="Models\PageBossPM.cs" />
     <Compile Include="Models\ConnectionTypes.cs" />
     <Compile Include="Models\DataCenters.cs" />
     <Compile Include="Models\DcScopes.cs" />
@@ -173,7 +173,7 @@
     <Compile Include="Models\OfficeScopes.cs" />
     <Compile Include="Models\OtherProjects.cs" />
     <Compile Include="Models\PhaseTypes.cs" />
-    <Compile Include="Models\PMProject.cs" />
+    <Compile Include="Models\MyPMProjects.cs" />
     <Compile Include="Models\ProjectTypes.cs" />
     <Compile Include="Models\ProjectView.cs" />
     <Compile Include="Models\SpeedConnectionTypes.cs" />
@@ -232,6 +232,8 @@
     <Content Include="Views\Factory\CreateFactoryProject.cshtml" />
     <Content Include="Views\Office\CreateOfficeProject.cshtml" />
     <Content Include="Views\OtherProject\CreateOtherProject.cshtml" />
+    <Content Include="Views\Home\MyPMProjects.cshtml" />
+    <Content Include="Views\Home\PageBossPM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

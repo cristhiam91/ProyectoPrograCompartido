@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PmTool.UI.Models
 {
-    public class PMProject
+    public class PageBossPM
     {
         public List<Factories> Factories { get; set; }
         public List<DataCenters> DataCenters { get; set; }

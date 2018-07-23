@@ -31,11 +31,6 @@ namespace PmTool.DAL.Metodos
             return _db.Select<Factories>(x => x.Factory_request_id == factoryProjectId).FirstOrDefault();
         }
 
-        public List<Factories> SearchFactoryProjectbypm(int user)
-        {
-            return _db.Select<Factories>(x => x.Factory_requestor_id == user);
-        }
-
         public void UpdateFactoryProject(Factories factory)
         {
             _db.Update(factory);

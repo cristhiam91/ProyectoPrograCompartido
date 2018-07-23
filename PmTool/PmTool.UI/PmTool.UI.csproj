@@ -53,21 +53,8 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="ServiceStack.Common">
-      <HintPath>..\ServiceStack.Common.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack.Interfaces">
       <HintPath>..\..\Otros\Clase 3\Dlls\ServiceStack.Interfaces.dll</HintPath>
-      <HintPath>..\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\ServiceStack.OrmLite.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite.SqlServer">
-      <HintPath>..\ServiceStack.OrmLite.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -181,7 +168,6 @@
     <Compile Include="Models\Factories.cs" />
     <Compile Include="Models\Labs.cs" />
     <Compile Include="Models\LabScopes.cs" />
-    <Compile Include="Models\MyProjects.cs" />
     <Compile Include="Models\Offices.cs" />
     <Compile Include="Models\OfficeScopes.cs" />
     <Compile Include="Models\OtherProjects.cs" />
@@ -251,7 +237,6 @@
     <Content Include="Views\User\CreateAccount.cshtml" />
     <Content Include="Views\User\EditUserAccount.cshtml" />
     <Content Include="Views\Home\aaa.cshtml" />
-    <Content Include="Views\Home\Mis_Proyectos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

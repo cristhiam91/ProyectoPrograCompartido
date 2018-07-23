@@ -36,5 +36,20 @@ namespace PmTool.DAL.Metodos
         {
             _db.Update(dataCenter);
         }
+        public List<DataCenters> DataCenterhUserProjects(int userId)
+        {
+            try
+            {
+                List<DataCenters> UserDataCentersProjects = _db.Where<DataCenters>(x => x.DataCenter_requestor_id == userId).ToList();
+
+                return UserDataCentersProjects;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

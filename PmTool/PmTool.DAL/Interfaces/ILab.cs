@@ -14,5 +14,7 @@ namespace PmTool.DAL.Interfaces
         Labs SearchLabProject(int labProjectId);
         void UpdateLabProject(Labs lab);
         void DeleteLabProject(int labProjectId);
+        List<Labs> LabUserProjects(int userId);
+
     }
 }

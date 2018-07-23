@@ -15,5 +15,8 @@ namespace PmTool.DAL.Interfaces
         DataCenters SearchDataCenterProject(int dataCenterProjectId);
         void UpdateDataCenterProject(DataCenters dataCenter);
         void DeleteDataCenterProject(int dataCenterProjectId);
+        List<DataCenters> DataCenterhUserProjects(int userId);
+
+
     }
 }

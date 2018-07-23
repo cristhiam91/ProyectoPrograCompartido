@@ -53,20 +53,8 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="ServiceStack.Common">
-      <HintPath>..\ServiceStack.Common.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\ServiceStack.OrmLite.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite.SqlServer">
-      <HintPath>..\ServiceStack.OrmLite.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\ServiceStack.Text.dll</HintPath>
+      <HintPath>..\..\Otros\Clase 3\Dlls\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -180,7 +168,6 @@
     <Compile Include="Models\Factories.cs" />
     <Compile Include="Models\Labs.cs" />
     <Compile Include="Models\LabScopes.cs" />
-    <Compile Include="Models\MyProjects.cs" />
     <Compile Include="Models\Offices.cs" />
     <Compile Include="Models\OfficeScopes.cs" />
     <Compile Include="Models\OtherProjects.cs" />
@@ -196,6 +183,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -232,7 +220,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\User\UsersId.cshtml" />
     <Content Include="Views\Project\FirstPage.cshtml" />
     <Content Include="Views\Project\Home.cshtml" />
     <Content Include="Views\Lab\NoLoginCreateProject.cshtml" />
@@ -243,11 +230,17 @@
     <Content Include="Views\Factory\CreateFactoryProject.cshtml" />
     <Content Include="Views\Office\CreateOfficeProject.cshtml" />
     <Content Include="Views\OtherProject\CreateOtherProject.cshtml" />
+    <Content Include="Views\User\UserProfileManagement.cshtml" />
+    <Content Include="Views\User\DeleteUserAccount.cshtml" />
+    <Content Include="Views\User\UserDetails.cshtml" />
+    <Content Include="Views\User\CreateUserAccount.cshtml" />
     <Content Include="Views\User\CreateAccount.cshtml" />
-    <Content Include="Views\Home\Mis_Proyectos.cshtml" />
+    <Content Include="Views\User\EditUserAccount.cshtml" />
+    <Content Include="Views\Home\aaa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

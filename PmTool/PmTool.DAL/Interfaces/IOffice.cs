@@ -16,6 +16,7 @@ namespace PmTool.DAL.Interfaces
         Offices SearchOfficeProject(int officeProjectId);
         void UpdateOfficeProject(Offices office);
         void DeleteOfficeProject(int officeProjectId);
-        List<Offices> SearchOfficeProjectbypm(int user);
+        List<Offices> OfficeUserProjects(int userId);
+
     }
 }

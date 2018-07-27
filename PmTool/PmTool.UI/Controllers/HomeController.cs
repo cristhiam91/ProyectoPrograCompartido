@@ -23,6 +23,7 @@ namespace PmTool.UI.Controllers
         IPhaseType phaType;
         IProjectType proType;
         ISpeedConnectionType speed;
+        IUser us;
         public HomeController()
         {
             dc = new MDataCenter();
@@ -33,6 +34,7 @@ namespace PmTool.UI.Controllers
             phaType = new MPhaseType();
             proType = new MProjectType();
             speed = new MSpeedConnectionType();
+            us = new MUser();
         }
         public ActionResult Index()
         {
@@ -73,5 +75,62 @@ namespace PmTool.UI.Controllers
 
             return View();
         }
+
+        public ActionResult loginB()
+        {
+
+            return View();
+        }
+
+        public ActionResult Mis_Proyectos(int user_id)
+        {
+            MyProjects myProjects = new MyProjects();
+            //Factories
+            var listaFactories = fac.SearchFactoryProjectbypm(user_id);
+            var LFactories = Mapper.Map<List<Models.Factories>>(listaFactories);
+            myProjects.Factories = LFactories;
+
+            //Labs - MEDIO funcional
+            var listaLabs = lab.SearchLabProjectbypm(user_id);
+            var LLabs = Mapper.Map<List<Models.Labs>>(listaLabs);
+            myProjects.Labs = LLabs;
+
+            //DataCenter
+            var listaDataCenter = dc.SearchDataCenterProjectbypm(user_id);
+            var LDataCenter = Mapper.Map<List<Models.DataCenters>>(listaDataCenter);
+            myProjects.DataCenters = LDataCenter;
+
+            //Office
+            var listaOffice = off.SearchOfficeProjectbypm(user_id);
+            var LOffices = Mapper.Map<List<Models.Offices>>(listaOffice);
+            myProjects.Offices = LOffices;
+
+            //OtherProject
+            var listaOtherProject = other.SearchOtherProjectbypm(user_id);
+            var LOPs = Mapper.Map<List<Models.OtherProjects>>(listaOtherProject);
+            myProjects.OtherProjects = LOPs;
+
+            return View(myProjects);
+        }
+        [HttpPost]
+        public ActionResult Login(Users user)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var obj = us.Login(user.User_name, user.User_password);
+                    if (obj != null)
+                    {
+                        Session["UserID"] = obj.User_id.ToString();
+                        Session["UserName"] = obj.User_name.ToString();
+                    return RedirectToAction("Mis_Proyectos", new { user_id = obj.User_id});
+                    }
+                
+            }
+            return RedirectToAction("Mis_Proyectos", new { user_id = 1 });
+            /*return View(user);*/
+        }
+
+       
     }
 }

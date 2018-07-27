@@ -100,5 +100,10 @@ namespace PmTool.DAL.Metodos
             }
           
         }
+
+        public Users Login(string username, string password)
+        {
+           return  _db.Where<Users>(a => a.User_name.Equals(username) && a.User_password.Equals(password)).FirstOrDefault();
+        }
     }
 }

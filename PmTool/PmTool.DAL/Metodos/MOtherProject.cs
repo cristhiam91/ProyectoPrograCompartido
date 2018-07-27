@@ -31,6 +31,11 @@ namespace PmTool.DAL.Metodos
             return _db.Select<OtherProjects>(x => x.Other_request_id == OtherProjectId).FirstOrDefault();
         }
 
+        public List<OtherProjects> SearchOtherProjectbypm(int user)
+        {
+            return _db.Select<OtherProjects>(x => x.Other_requestor_id == user);
+        }
+
         public void UpdateOtherProject(OtherProjects otherProject)
         {
             _db.Update(otherProject);

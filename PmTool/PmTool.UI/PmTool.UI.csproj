@@ -53,8 +53,21 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\ServiceStack.Common.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Interfaces">
       <HintPath>..\..\Otros\Clase 3\Dlls\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>..\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer">
+      <HintPath>..\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -161,6 +174,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BossProjectManager.cs" />
     <Compile Include="Models\ConnectionTypes.cs" />
     <Compile Include="Models\DataCenters.cs" />
     <Compile Include="Models\DcScopes.cs" />
@@ -168,10 +182,12 @@
     <Compile Include="Models\Factories.cs" />
     <Compile Include="Models\Labs.cs" />
     <Compile Include="Models\LabScopes.cs" />
+    <Compile Include="Models\MyProjects.cs" />
     <Compile Include="Models\Offices.cs" />
     <Compile Include="Models\OfficeScopes.cs" />
     <Compile Include="Models\OtherProjects.cs" />
     <Compile Include="Models\PhaseTypes.cs" />
+    <Compile Include="Models\PMProject.cs" />
     <Compile Include="Models\ProjectTypes.cs" />
     <Compile Include="Models\ProjectView.cs" />
     <Compile Include="Models\SpeedConnectionTypes.cs" />
@@ -183,6 +199,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\login.css" />
+    <Content Include="Content\loginBStyle.css" />
     <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -203,6 +220,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\login.js" />
     <Content Include="Scripts\login2.js" />
+    <Content Include="Scripts\loginBScrip.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -217,9 +235,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Project\FirstPage.cshtml" />
     <Content Include="Views\Project\Home.cshtml" />
     <Content Include="Views\Lab\NoLoginCreateProject.cshtml" />
@@ -237,6 +252,9 @@
     <Content Include="Views\User\CreateAccount.cshtml" />
     <Content Include="Views\User\EditUserAccount.cshtml" />
     <Content Include="Views\Home\aaa.cshtml" />
+    <Content Include="Views\Home\Mis_Proyectos.cshtml" />
+    <Content Include="Views\Home\IndexBackup.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

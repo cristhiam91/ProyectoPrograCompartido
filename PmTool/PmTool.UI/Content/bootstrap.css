@@ -1410,9 +1410,13 @@ table {
 }
 
 th {
-  text-align: left;
+    text-align: left;
+    background-color: #3276b1 !important;
+    color: white !important;
 }
-
+tr:nth-child(even) {
+    background-color: #f2f2f2 !important;
+}
 .table {
   width: 100%;
   margin-bottom: 20px;

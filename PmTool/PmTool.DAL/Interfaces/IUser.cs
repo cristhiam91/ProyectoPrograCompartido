@@ -17,6 +17,7 @@ namespace PmTool.DAL.Interfaces
 
         void EditUser(Users user);
         void DeleteUser(int userId);
+        Users Login(string username, string password);
     }
 
    

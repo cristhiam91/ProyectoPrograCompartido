@@ -1,4 +1,5 @@
-﻿@model PmTool.UI.Models.PageBossPM
+﻿@*@model PmTool.UI.Models.PageBossPM*@
+
 @{
 	ViewBag.Title = "Boss PM";
 }
@@ -6,6 +7,14 @@
 <h2>PageBossPM</h2>
 
 <h2>Labs</h2>
+
+<p>
+	@*@Html.ActionLink("Create New", "ChooseProjects")*@
+
+<div>
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Create New</button>
+</div>
+</p>
 
 <p>
 	@Html.ActionLink("Create New", "CreateLabProject")
@@ -23,7 +32,7 @@
 		</th>
 		<th></th>
 	</tr>
-	@foreach (var item in Model.Labs)
+	@*@foreach (var item in Model.Labs)
 	{
 		<tr>
 			<td>
@@ -42,7 +51,7 @@
 				@Html.ActionLink("Assign", "Assign", new { id = item.Lab_request_id })
 			</td>
 		</tr>
-	}
+	}*@
 </table>
 <h2>Factory</h2>
 
@@ -62,7 +71,7 @@
 		</th>
 		<th></th>
 	</tr>
-	@foreach (var item in Model.Factories)
+	@*@foreach (var item in Model.Factories)
 	{
 		<tr>
 			<td>
@@ -81,7 +90,7 @@
 				@Html.ActionLink("Assign", "Assign", new { id = item.Factory_request_id })
 			</td>
 		</tr>
-	}
+	}*@
 </table>
 <h2>Data Center</h2>
 
@@ -102,7 +111,7 @@
 		</th>
 		<th></th>
 	</tr>
-	@foreach (var item in Model.DataCenters)
+	@*@foreach (var item in Model.DataCenters)
 	{
 		<tr>
 			<td>
@@ -121,7 +130,7 @@
 				@Html.ActionLink("Assign", "Assign", new { id = item.DataCenter_request_id })
 			</td>
 		</tr>
-	}
+	}*@
 </table>
 <h2>Office</h2>
 <table class="table">
@@ -137,7 +146,7 @@
 		</th>
 		<th></th>
 	</tr>
-	@foreach (var item in Model.Offices)
+	@*@foreach (var item in Model.Offices)
 	{
 		<tr>
 			<td>
@@ -156,7 +165,7 @@
 				@Html.ActionLink("Assign", "Assign", new { id = item.Office_request_id })
 			</td>
 		</tr>
-	}
+	}*@
 </table>
 <h2>Other Project</h2>
 
@@ -174,7 +183,7 @@
 		</th>
 		<th></th>
 	</tr>
-	@foreach (var item in Model.OtherProjects)
+	@*@foreach (var item in Model.OtherProjects)
 	{
 		<tr>
 			<td>
@@ -190,5 +199,47 @@
 				@Html.ActionLink("Assign", "Assign", new { id = item.Other_request_id })
 			</td>
 		</tr>
-	}
+	}*@
 </table>
+
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">What kind of project you want to create?</</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="container">
+						<div>
+							<input type="button" name="GoCreatelabProjectButton" class="btn btn-primary btn-lg" value="Lab project" onclick="location.href='@Url.Action("CreateLabProject","Lab")'" />
+						</div>
+						<br />
+						<div>
+							<input type="button" name="GoCreateDataCenterProjectButton" class="btn btn-primary btn-lg" value="Data center project" onclick="location.href='@Url.Action("CreateDataCenterProject","DataCenter")'" />
+						</div>
+						<br />
+						<div>
+							<input type="button" name="GoCreateFactoryProjectButton" class="btn btn-primary btn-lg" value="Factory project" onclick="location.href='@Url.Action("CreateFactoryProject","Factory")'" />
+						</div>
+						<br />
+						<div>
+							<input type="button" name="GoCreateOfficeProjectButton" class="btn btn-primary btn-lg" value="Office project" onclick="location.href='@Url.Action("CreateOfficeProject","Office")'" />
+						</div>
+						<br />
+						<div>
+							<input type="button" name="GoCreateOtherProjectButton" class="btn btn-primary btn-lg" value="Other project" onclick="location.href='@Url.Action("CreateOtherProject","OtherProject")'" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>

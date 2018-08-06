@@ -97,5 +97,65 @@ namespace PmTool.UI.Controllers
 
             return View(myProjects);
         }
+        public ActionResult PageBossPM(int user_id)
+        {
+            PageBossPM pageBossPM = new PageBossPM();
+            //Factories
+            var listaFactories = fac.SearchFactoryProjectbypm(user_id);
+            var LFactories = Mapper.Map<List<Models.Factories>>(listaFactories);
+            pageBossPM.Factories = LFactories;
+
+            //Labs - MEDIO funcional
+            var listaLabs = lab.SearchLabProjectbypm(user_id);
+            var LLabs = Mapper.Map<List<Models.Labs>>(listaLabs);
+            pageBossPM.Labs = LLabs;
+
+            //DataCenter
+            var listaDataCenter = dc.SearchDataCenterProjectbypm(user_id);
+            var LDataCenter = Mapper.Map<List<Models.DataCenters>>(listaDataCenter);
+            pageBossPM.DataCenters = LDataCenter;
+
+            //Office
+            var listaOffice = off.SearchOfficeProjectbypm(user_id);
+            var LOffices = Mapper.Map<List<Models.Offices>>(listaOffice);
+            pageBossPM.Offices = LOffices;
+
+            //OtherProject
+            var listaOtherProject = other.SearchOtherProjectbypm(user_id);
+            var LOPs = Mapper.Map<List<Models.OtherProjects>>(listaOtherProject);
+            pageBossPM.OtherProjects = LOPs;
+
+            return View(pageBossPM);
+        }
+        public ActionResult MyPMProjects(int user_id)
+        {
+            MyPMProjects myPMProjects = new MyPMProjects();
+            //Factories
+            var listaFactories = fac.SearchFactoryProjectbypm(user_id);
+            var LFactories = Mapper.Map<List<Models.Factories>>(listaFactories);
+            myPMProjects.Factories = LFactories;
+
+            //Labs - MEDIO funcional
+            var listaLabs = lab.SearchLabProjectbypm(user_id);
+            var LLabs = Mapper.Map<List<Models.Labs>>(listaLabs);
+            myPMProjects.Labs = LLabs;
+
+            //DataCenter
+            var listaDataCenter = dc.SearchDataCenterProjectbypm(user_id);
+            var LDataCenter = Mapper.Map<List<Models.DataCenters>>(listaDataCenter);
+            myPMProjects.DataCenters = LDataCenter;
+
+            //Office
+            var listaOffice = off.SearchOfficeProjectbypm(user_id);
+            var LOffices = Mapper.Map<List<Models.Offices>>(listaOffice);
+            myPMProjects.Offices = LOffices;
+
+            //OtherProject
+            var listaOtherProject = other.SearchOtherProjectbypm(user_id);
+            var LOPs = Mapper.Map<List<Models.OtherProjects>>(listaOtherProject);
+            myPMProjects.OtherProjects = LOPs;
+
+            return View(myPMProjects);
+        }
     }
 }

@@ -111,5 +111,66 @@ namespace PmTool.UI.Controllers
 
 
         }
+
+        public ActionResult EditFactoryProject(int id)
+        {
+            var factory = fac.SearchFactoryProject(id);
+            var factoryShow = Mapper.Map<Models.Factories>(factory);
+            return View(factoryShow);
+        }
+        [HttpPost]
+        public ActionResult EditFactoryProject(Factories factory)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var updateFactoryProject = Mapper.Map<DATA.Factories>(factory);
+                fac.UpdateFactoryProject(updateFactoryProject);
+                return RedirectToAction("Index", "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public ActionResult Delete(int id)
+        {
+            fac.DeleteFactoryProject(id);
+            return View();
+        }
+
+        public ActionResult DetailsFactoryProject(int id)
+        {
+            var factory = fac.SearchFactoryProject(id);
+            var factoryShow = Mapper.Map<Models.Factories>(factory);
+            return View(factoryShow);
+        }
+        public ActionResult AssignFactoryProject(int id)
+        {
+            var factory = fac.SearchFactoryProject(id);
+            var factoryShow = Mapper.Map<Models.Factories>(factory);
+            return View(factoryShow);
+        }
+        [HttpPost]
+        public ActionResult AssignFactoryProject(Factories factory)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var updateFactoryProject = Mapper.Map<DATA.Factories>(factory);
+                fac.UpdateFactoryProject(updateFactoryProject);
+                return RedirectToAction("Index", "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

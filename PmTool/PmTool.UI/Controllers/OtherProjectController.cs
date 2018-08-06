@@ -74,5 +74,65 @@ namespace PmTool.UI.Controllers
             }
 
         }
+        public ActionResult EditOtherProject(int id)
+        {
+            var other = oProjec.SearchOtherProject(id);
+            var otheryShow = Mapper.Map<Models.OtherProjects>(other);
+            return View(otheryShow);
+        }
+        [HttpPost]
+        public ActionResult EditOtherProject(OtherProjects other)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var updateOtherProject = Mapper.Map<DATA.OtherProjects>(other);
+                oProjec.UpdateOtherProject(updateOtherProject);
+                return RedirectToAction("Index", "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public ActionResult Delete(int id)
+        {
+            oProjec.DeleteOtherProject(id);
+            return View();
+        }
+
+        public ActionResult DetailsOtherProject(int id)
+        {
+            var other = oProjec.SearchOtherProject(id);
+            var otheryShow = Mapper.Map<Models.OtherProjects>(other);
+            return View(otheryShow);
+        }
+        public ActionResult AssignOtherProject(int id)
+        {
+            var other = oProjec.SearchOtherProject(id);
+            var otheryShow = Mapper.Map<Models.OtherProjects>(other);
+            return View(otheryShow);
+        }
+        [HttpPost]
+        public ActionResult AssignOtherProject(OtherProjects other)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var updateOtherProject = Mapper.Map<DATA.OtherProjects>(other);
+                oProjec.UpdateOtherProject(updateOtherProject);
+                return RedirectToAction("Index", "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

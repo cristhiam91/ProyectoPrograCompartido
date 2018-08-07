@@ -47,7 +47,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.7.0.0\lib\net45\AutoMapper.dll</HintPath>
+      <HintPath>..\..\DLL\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -182,10 +182,12 @@
     <Compile Include="Models\Factories.cs" />
     <Compile Include="Models\Labs.cs" />
     <Compile Include="Models\LabScopes.cs" />
+    <Compile Include="Models\MyPMProjects.cs" />
     <Compile Include="Models\MyProjects.cs" />
     <Compile Include="Models\Offices.cs" />
     <Compile Include="Models\OfficeScopes.cs" />
     <Compile Include="Models\OtherProjects.cs" />
+    <Compile Include="Models\PageBossPM.cs" />
     <Compile Include="Models\PhaseTypes.cs" />
     <Compile Include="Models\ProjectTypes.cs" />
     <Compile Include="Models\ProjectView.cs" />
@@ -263,6 +265,23 @@
     <Content Include="Views\User\CreateMyAccount.cshtml" />
     <Content Include="Views\User\MyAccount.cshtml" />
     <Content Include="Views\User\AdminConsole.cshtml" />
+    <Content Include="Views\DataCenter\AssignLabProject.cshtml" />
+    <Content Include="Views\DataCenter\DetailsDataCenterProject.cshtml" />
+    <Content Include="Views\DataCenter\EditDataCenterProject.cshtml" />
+    <Content Include="Views\Factory\AssignFactoryProject.cshtml" />
+    <Content Include="Views\Factory\DetailsFactoryProject.cshtml" />
+    <Content Include="Views\Factory\EditFactoryProject.cshtml" />
+    <Content Include="Views\Lab\AssignLabProject.cshtml" />
+    <Content Include="Views\Lab\DetailsLabProject.cshtml" />
+    <Content Include="Views\Lab\EditLabProject.cshtml" />
+    <Content Include="Views\Office\AssignOfficeProject.cshtml" />
+    <Content Include="Views\Office\DetailsOfficeProject.cshtml" />
+    <Content Include="Views\Office\EditOfficeProject.cshtml" />
+    <Content Include="Views\OtherProject\AssignOtherProject.cshtml" />
+    <Content Include="Views\OtherProject\DetailsOtherProject.cshtml" />
+    <Content Include="Views\OtherProject\EditOtherProject.cshtml" />
+    <Content Include="Views\User\MyPMProjects.cshtml" />
+    <Content Include="Views\User\PageBossPM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

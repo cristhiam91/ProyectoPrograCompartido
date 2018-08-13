@@ -92,7 +92,7 @@ namespace PmTool.UI.Controllers
             {
                 //Changes the lab project null to 2=Laboratory
                 laboratory.Project_type = 2;
-                try
+                try 
                 {
                     if (!ModelState.IsValid)
                     {
@@ -114,6 +114,67 @@ namespace PmTool.UI.Controllers
                 return View();
             }
 
+        }
+        public ActionResult EditLabProject(int id)
+        {
+            var labs = lab.SearchLabProject(id);
+            var labsShow = Mapper.Map<Models.Labs>(labs);
+            return View(labsShow);
+        }
+        [HttpPost]
+        public ActionResult EditLabProject(Labs labs)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var updateLabProject = Mapper.Map<DATA.Labs>(labs);
+                lab.UpdateLabProject(updateLabProject);
+                return RedirectToAction("Index", "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public ActionResult Delete(int id)
+        {
+            lab.DeleteLabProject(id);
+            return View();
+        }
+
+        public ActionResult DetailsLabProject(int id)
+        {
+            var labs = lab.SearchLabProject(id);
+            var labsShow = Mapper.Map<Models.Labs>(labs);
+            return View(labsShow);
+        }
+
+        public ActionResult AssignLabProject(int id)
+        {
+            var labs = lab.SearchLabProject(id);
+            var labsShow = Mapper.Map<Models.Labs>(labs);
+            return View(labsShow);
+        }
+        [HttpPost]
+        public ActionResult AssignLabProject(Labs labs)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var updateLabProject = Mapper.Map<DATA.Labs>(labs);
+                lab.UpdateLabProject(updateLabProject);
+                return RedirectToAction("Index", "Home");
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

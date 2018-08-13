@@ -31,19 +31,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ServiceStack.Common">
-      <HintPath>..\..\..\..\Otros 2\Dlls\ServiceStack.Common.dll</HintPath>
+      <HintPath>..\..\DLL\ServiceStack.Common.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\..\..\..\Otros 2\Dlls\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\..\DLL\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\..\..\..\Otros 2\Dlls\ServiceStack.OrmLite.dll</HintPath>
+      <HintPath>..\..\DLL\ServiceStack.OrmLite.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.OrmLite.SqlServer">
-      <HintPath>..\..\..\..\Otros 2\Dlls\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+      <HintPath>..\..\DLL\ServiceStack.OrmLite.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Text">
-      <HintPath>..\..\..\..\Otros 2\Dlls\ServiceStack.Text.dll</HintPath>
+      <HintPath>..\..\DLL\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

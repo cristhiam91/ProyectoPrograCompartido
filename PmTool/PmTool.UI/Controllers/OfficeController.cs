@@ -109,5 +109,65 @@ namespace PmTool.UI.Controllers
             }
 
         }
+        public ActionResult EditOfficeProject(int id)
+        {
+            var office = off.SearchOfficeProject(id);
+            var officeShow = Mapper.Map<Models.Offices>(office);
+            return View(officeShow);
+        }
+        [HttpPost]
+        public ActionResult EditOfficeProject(Offices office)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var updateOfficeProject = Mapper.Map<DATA.Offices>(office);
+                off.UpdateOfficeProject(updateOfficeProject);
+                return RedirectToAction("Index", "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        public ActionResult Delete(int id)
+        {
+            off.DeleteOfficeProject(id);
+            return View();
+        }
+
+        public ActionResult DetailsOfficeProject(int id)
+        {
+            var office = off.SearchOfficeProject(id);
+            var officeShow = Mapper.Map<Models.Offices>(office);
+            return View(officeShow);
+        }
+        public ActionResult AssignOfficeProject(int id)
+        {
+            var office = off.SearchOfficeProject(id);
+            var officeShow = Mapper.Map<Models.Offices>(office);
+            return View(officeShow);
+        }
+        [HttpPost]
+        public ActionResult AssignOfficeProject(Offices office)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var updateOfficeProject = Mapper.Map<DATA.Offices>(office);
+                off.UpdateOfficeProject(updateOfficeProject);
+                return RedirectToAction("Index", "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

@@ -147,27 +147,55 @@ namespace PmTool.UI.Controllers
             var factoryShow = Mapper.Map<Models.Factories>(factory);
             return View(factoryShow);
         }
+        //public ActionResult AssignFactoryProject(int id)
+        //{
+        //    var factory = fac.SearchFactoryProject(id);
+        //    var factoryShow = Mapper.Map<Models.Factories>(factory);
+        //    return View(factoryShow);
+        //}
+        //[HttpPost]
+        //public ActionResult AssignFactoryProject(Factories factory)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return View();
+        //        }
+        //        var updateFactoryProject = Mapper.Map<DATA.Factories>(factory);
+        //        fac.UpdateFactoryProject(updateFactoryProject);
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
         public ActionResult AssignFactoryProject(int id)
         {
-            var factory = fac.SearchFactoryProject(id);
-            var factoryShow = Mapper.Map<Models.Factories>(factory);
-            return View(factoryShow);
+            var listfac = fac.ListFactories();
+            ViewBag.listfac1 = new SelectList(listfac, "Lab_request_id", "Assigned_pm ");
+            return View();
         }
         [HttpPost]
         public ActionResult AssignFactoryProject(Factories factory)
         {
             try
             {
+
+
                 if (!ModelState.IsValid)
                 {
                     return View();
                 }
                 var updateFactoryProject = Mapper.Map<DATA.Factories>(factory);
                 fac.UpdateFactoryProject(updateFactoryProject);
-                return RedirectToAction("Index", "Home");
+                 return RedirectToAction("Index", "Home");
             }
             catch
             {
+                var listfac = fac.ListFactories();
+                ViewBag.listfac1 = new SelectList(listfac, "Assigned_pm ");
                 return View();
             }
         }

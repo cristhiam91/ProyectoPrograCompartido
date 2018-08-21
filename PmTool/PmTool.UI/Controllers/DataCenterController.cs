@@ -139,17 +139,43 @@ namespace PmTool.UI.Controllers
             var datacShow = Mapper.Map<Models.DataCenters>(datac);
             return View(datacShow);
         }
+        //public ActionResult AssignLabProject(int id)
+        //{
+        //    var datac = dc.SearchDataCenterProject(id);
+        //    var datacShow = Mapper.Map<Models.DataCenters>(datac);
+        //    return View(datacShow);
+        //}
+        //[HttpPost]
+        //public ActionResult AssignLabProject(DataCenters datac)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return View();
+        //        }
+        //        var updateDataCenterProject = Mapper.Map<DATA.DataCenters>(datac);
+        //        dc.UpdateDataCenterProject(updateDataCenterProject);
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
         public ActionResult AssignLabProject(int id)
         {
-            var datac = dc.SearchDataCenterProject(id);
-            var datacShow = Mapper.Map<Models.DataCenters>(datac);
-            return View(datacShow);
+            var listdata = dc.ListDataCenters();
+            ViewBag.listdata1 = new SelectList(listdata, "Lab_request_id", "Assigned_pm ");
+            return View();
         }
         [HttpPost]
         public ActionResult AssignLabProject(DataCenters datac)
         {
             try
             {
+
+
                 if (!ModelState.IsValid)
                 {
                     return View();
@@ -160,8 +186,11 @@ namespace PmTool.UI.Controllers
             }
             catch
             {
+                var listdata = dc.ListDataCenters();
+                ViewBag.listdata1 = new SelectList(listdata, "Assigned_pm ");
                 return View();
             }
         }
+
     }
 }

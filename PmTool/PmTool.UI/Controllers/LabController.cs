@@ -152,17 +152,43 @@ namespace PmTool.UI.Controllers
             return View(labsShow);
         }
 
+        //public ActionResult AssignLabProject(int id)
+        //{
+        //    var labs = lab.SearchLabProject(id);
+        //    var labsShow = Mapper.Map<Models.Labs>(labs);
+        //    return View(labsShow);
+        //}
+        //[HttpPost]
+        //public ActionResult AssignLabProject(Labs labs)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return View();
+        //        }
+        //        var updateLabProject = Mapper.Map<DATA.Labs>(labs);
+        //        lab.UpdateLabProject(updateLabProject);
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
         public ActionResult AssignLabProject(int id)
         {
-            var labs = lab.SearchLabProject(id);
-            var labsShow = Mapper.Map<Models.Labs>(labs);
-            return View(labsShow);
+            var listlabs = lab.ListLabs();
+            ViewBag.listlabs1 = new SelectList(listlabs, "Lab_request_id", "Assigned_pm ");
+            return View();
         }
         [HttpPost]
         public ActionResult AssignLabProject(Labs labs)
         {
             try
             {
+
+
                 if (!ModelState.IsValid)
                 {
                     return View();
@@ -173,6 +199,8 @@ namespace PmTool.UI.Controllers
             }
             catch
             {
+                var listlabs = lab.ListLabs();
+                ViewBag.listlabs1 = new SelectList(listlabs, "Assigned_pm ");
                 return View();
             }
         }

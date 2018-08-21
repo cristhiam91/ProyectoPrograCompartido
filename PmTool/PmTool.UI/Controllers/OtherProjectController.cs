@@ -110,27 +110,56 @@ namespace PmTool.UI.Controllers
             var otheryShow = Mapper.Map<Models.OtherProjects>(other);
             return View(otheryShow);
         }
+        //public ActionResult AssignOtherProject(int id)
+        //{
+        //    var other = oProjec.SearchOtherProject(id);
+        //    var otheryShow = Mapper.Map<Models.OtherProjects>(other);
+        //    return View(otheryShow);
+        //}
+        //[HttpPost]
+        //public ActionResult AssignOtherProject(OtherProjects other)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return View();
+        //        }
+        //        var updateOtherProject = Mapper.Map<DATA.OtherProjects>(other);
+        //        oProjec.UpdateOtherProject(updateOtherProject);
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
+
         public ActionResult AssignOtherProject(int id)
         {
-            var other = oProjec.SearchOtherProject(id);
-            var otheryShow = Mapper.Map<Models.OtherProjects>(other);
-            return View(otheryShow);
+            var listoProjec = oProjec.ListOtherProjects();
+            ViewBag.listoProjec1 = new SelectList(listoProjec, "Lab_request_id", "Assigned_pm ");
+            return View();
         }
         [HttpPost]
         public ActionResult AssignOtherProject(OtherProjects other)
         {
             try
             {
+
+
                 if (!ModelState.IsValid)
                 {
                     return View();
                 }
                 var updateOtherProject = Mapper.Map<DATA.OtherProjects>(other);
-                oProjec.UpdateOtherProject(updateOtherProject);
-                return RedirectToAction("Index", "Home");
+                 oProjec.UpdateOtherProject(updateOtherProject);
+                  return RedirectToAction("Index", "Home");
             }
             catch
             {
+                var listoProjec = oProjec.ListOtherProjects();
+                ViewBag.listoProjec1 = new SelectList(listoProjec, "Assigned_pm ");
                 return View();
             }
         }

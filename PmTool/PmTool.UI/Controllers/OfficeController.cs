@@ -145,27 +145,55 @@ namespace PmTool.UI.Controllers
             var officeShow = Mapper.Map<Models.Offices>(office);
             return View(officeShow);
         }
+        //public ActionResult AssignOfficeProject(int id)
+        //{
+        //    var office = off.SearchOfficeProject(id);
+        //    var officeShow = Mapper.Map<Models.Offices>(office);
+        //    return View(officeShow);
+        //}
+        //[HttpPost]
+        //public ActionResult AssignOfficeProject(Offices office)
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return View();
+        //        }
+        //        var updateOfficeProject = Mapper.Map<DATA.Offices>(office);
+        //        off.UpdateOfficeProject(updateOfficeProject);
+        //        return RedirectToAction("Index", "Home");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
         public ActionResult AssignOfficeProject(int id)
         {
-            var office = off.SearchOfficeProject(id);
-            var officeShow = Mapper.Map<Models.Offices>(office);
-            return View(officeShow);
+            var listoff = off.ListOfficeProjects();
+            ViewBag.listoff1 = new SelectList(listoff, "Lab_request_id", "Assigned_pm ");
+            return View();
         }
         [HttpPost]
         public ActionResult AssignOfficeProject(Offices office)
         {
             try
             {
+
+
                 if (!ModelState.IsValid)
                 {
                     return View();
                 }
                 var updateOfficeProject = Mapper.Map<DATA.Offices>(office);
-                off.UpdateOfficeProject(updateOfficeProject);
-                return RedirectToAction("Index", "Home");
+                    off.UpdateOfficeProject(updateOfficeProject);
+                   return RedirectToAction("Index", "Home");
             }
             catch
             {
+                var listoff = off.ListOfficeProjects();
+                ViewBag.listoff1 = new SelectList(listoff, "Assigned_pm ");
                 return View();
             }
         }

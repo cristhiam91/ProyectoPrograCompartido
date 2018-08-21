@@ -117,7 +117,7 @@ namespace PmTool.UI.Controllers
 
             return View(myProjects);
         }
-        public ActionResult MyPMProjects(int user_id = (Int32)Session["TheUserID"])
+        public ActionResult MyPMProjects(int user_id )
         {
             MyPMProjects myPMProjects = new MyPMProjects();
             //Factories
@@ -147,7 +147,7 @@ namespace PmTool.UI.Controllers
 
             return View(myPMProjects);
         }
-        public ActionResult PageBossPM(int user_id = (Int32)Session["TheUserID"])
+        public ActionResult PageBossPM(int user_id )
         {
             PageBossPM pageBossPM = new PageBossPM();
             //Factories
